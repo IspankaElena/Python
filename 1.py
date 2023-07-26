@@ -3,45 +3,20 @@
 # перевернуть, чтобы все монетки были повернуты вверх одной и той же стороной. 
 # Выведите минимальное количество монет, которые нужно перевернуть
 
-# n = int(input()) 
-# heads = 0 
-# tails = 0 
-# for i in range(n): 
-#     coin = int(input()) 
-#     if coin == 1: 
-#         heads += 1 
-#     else: 
-#         tails += 1 
-# print(min(heads, tails))
-
-
-# # Создаем болванку под счетчик числа решек 
-# tails = 0 
- 
-# # Считываем и запоминаем число монет 
-# n = int(input()) 
- 
-# # Списком считаем число решек, добавляя "статус" каждой монетки к счетчику 
-# for coin in range(n): 
-#     tails += int(input()) 
- 
-# # Вычисляем и печатаем, кого меньше - нулей (гербов) или единиц (решек) 
-# print(min(tails, n - tails))
-
-N = int(input('number of coins '))
-heads = tails = 0
-for i in range(N):
-    x = int(input('heads(1) or tails(0)? '))
-    if x == 1:
-        heads += 1
-    else:
-        tails += 1
-if heads < tails:
-    print(f'flip {heads} coins to the other side, smaller amount')
-elif heads == tails:
-    print(f'amount of heads and tails equallly, with {heads}')
-else:
-    print((f'flip {tails} coins to the other side, smaller amount'))
+# N = int(input('Введите количество монет '))
+# orel = reshka = 0
+# for i in range(N):
+#     x = int(input('Орел(1) или решка(0)? '))
+#     if x == 1:
+#         orel += 1
+#     else:
+#         reshka += 1
+# if orel < reshka:
+#     print(f'Переверните {orel} монет с орла на решку, их меньше всего')
+# elif orel == reshka:
+#     print(f'Количество орлов и решек одинаково, по {orel} штук')
+# else:
+#     print((f'Переверните {reshka} монет с решки на орла, их меньше всего'))
 
 
 # Задача 12: Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница. 
@@ -49,5 +24,32 @@ else:
 # а Катя должна их отгадать. Для этого Петя делает две подсказки. Он называет сумму 
 # этих чисел S и их произведение P. Помогите Кате отгадать задуманные Петей числа.
 
+# s = int(input('Задай сумму двух чисел \n'))
+# p = int(input('Задай произведение чисел \n'))
+# for x in range(s):
+#     for y in range(p):
+#         if s == x + y and p == x * y:
+#             print(f'первое число ="{x}", второе число ="{y}"')
+
 # Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), 
 # не превосходящие числа N.
+
+# N = abs(int(input('Введите число N ')))
+# stop = 0
+# P = 2
+# for i in range(N):
+#     if stop != 1:
+#         P = P ** i
+#         if P <= N:
+#             print(P, end=' ')
+#             P = 2
+#         else:
+#             stop = 1
+#     else:
+#         i = N
+
+n = int(input('Введи число N:'))
+i = 0
+while 2 ** i <= n:
+    print(f' 2 в степени {i} равна {2 ** i}')
+    i += 1
