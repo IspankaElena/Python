@@ -17,6 +17,23 @@
 #     print(f'Количество орлов и решек одинаково, по {orel} штук')
 # else:
 #     print((f'Переверните {reshka} монет с решки на орла, их меньше всего'))
+# print(count_o if count_o < count_r else count_r)
+
+# 2 Mode
+
+# n = int(input())
+# count_o = 0
+# count_r = 0
+# for i in range(n):
+#     x = int(input())
+#     if x == 1:
+#         count_o += 1
+#     else:
+#         count_r += 1
+# if count_o < count_r:
+#     print(count_o)
+# else:
+#     print(count_r)
 
 
 # Задача 12: Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница. 
@@ -30,6 +47,18 @@
 #     for y in range(p):
 #         if s == x + y and p == x * y:
 #             print(f'первое число ="{x}", второе число ="{y}"')
+
+# 2 mode
+
+# def f(s, p):
+#     for i in range(s + 1):
+#         for j in range(s + 1):
+#             if i + j == s and i * j == p:
+#                 return i, j
+
+# s = int(input())
+# p = int(input())
+# print(f(s, p))
 
 # Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), 
 # не превосходящие числа N.
@@ -48,8 +77,94 @@
 #     else:
 #         i = N
 
-n = int(input('Введи число N:'))
-i = 0
-while 2 ** i <= n:
-    print(f' 2 в степени {i} равна {2 ** i}')
-    i += 1
+# n = int(input('Введи число N:'))
+# i = 0
+# while 2 ** i <= n:
+#     print(f' 2 в степени {i} равна {2 ** i}')
+#     i += 1
+
+# mode 2
+    
+# n = int(input())
+# i = 0
+# while 2 ** i <= n:
+#     print(2 ** i)
+#     i += 1
+
+# Последовательностью Фибоначчи называется последовательность чисел a0, a1, ..., an, ..., где
+# a0 = 0, a1 = 1, ak = ak-1 + ak-2 (k > 1).
+# Требуется найти N-е число Фибоначчи
+# Input: 7
+# Output: 13
+
+# Задание необходимо решать через рекурсию
+# def f(n):
+    # if n in [0,1]: #if n == 0 or n ==1
+#         return n
+#     return f(n - 1) + f(n - 2)
+
+# n = int(input())
+# print(f(n))
+
+# 4
+
+# f(3)                 +      f(2)
+# f(2) +       f(1)           f(1) + f(0)
+# f(1) + f(0)   1               1      0
+#  1       0
+
+# Хакер Василий получил доступ к классному журналу и 
+# хочет заменить все свои минимальные оценки на максимальные. 
+# Напишите программу, которая заменяет оценки Василия, но наоборот: 
+# все максимальные – на минимальные.
+# Input: 5 -> 1 3 3 3 4
+
+# Output: 1 3 3 3 1
+
+# n = int(input())
+# list1 = []
+# for i in range(n):
+#     x = int(input('x = '))
+#     list1.append(x)
+
+# max1 = max(list1)
+# min1 = min(list1)
+
+# for i in range(n):
+#     if list1[i] == max1:
+#         list1[i] = min1
+    
+# print(list1)
+
+# list1 = [int(input('x = ')) for i in range(int(input()))]
+# max1 = max(list1)
+# min1 = min(list1)
+# list1 = [min1 if i == max1 else i for i in list1]
+# print(list1)
+
+# Напишите функцию, которая принимает одно число и проверяет, является ли оно простым
+
+# Напоминание: Простое число - это число, которое имеет 2 делителя: 1  и n(само число)
+
+# Input: 5
+# Output: yes
+
+# def f(n):
+#     i = 2
+#     while i < n:
+#         if n % i == 0:
+#             return 'no'
+#         i += 1
+#     return 'yes'
+
+# n = int(input())
+# print(f(n))
+
+# Дано натуральное число N и последовательность из N элементов. 
+# Требуется вывести эту последовательность в обратном порядке.
+# Примечание. В программе запрещается объявлять массивы и 
+# использовать циклы (даже для ввода и вывода).
+
+# Input:    2 -> 3 4
+# Output: 4 3
+
